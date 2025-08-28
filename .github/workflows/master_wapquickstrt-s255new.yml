@@ -25,15 +25,15 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: appexpressacr.azurecr.io/
-          username: ${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_5213C27D888046549C3D6CABD15342BC }}
-          password: ${{ secrets.AZUREAPPSERVICE_CONTAINERPASSWORD_F6DFF0FE141B40F899D54AB76DC52F8A }}
+          username: ${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_E5A24C193CB6462DA0258CDB90D1BC8E }}
+          password: ${{ secrets.AZUREAPPSERVICE_CONTAINERPASSWORD_BE1321049DDD4358817CAE5FFA58D67E }}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
-          tags: appexpressacr.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_5213C27D888046549C3D6CABD15342BC }}/hello-world:${{ github.sha }}
+          tags: appexpressacr.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_E5A24C193CB6462DA0258CDB90D1BC8E }}/hello-world:${{ github.sha }}
           file: ./Dockerfile
 
   deploy:
@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'wapquickstrt-s255new'
           slot-name: 'Production'
-          images: 'appexpressacr.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_5213C27D888046549C3D6CABD15342BC }}/hello-world:${{ github.sha }}'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_990C00071FE849BCBC617D4B61DA1D32 }}
+          images: 'appexpressacr.azurecr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_E5A24C193CB6462DA0258CDB90D1BC8E }}/hello-world:${{ github.sha }}'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A2DCC0FB6DA84BF9BE5AB45098DADBC9 }}
