@@ -63,4 +63,4 @@ jobs:
         with:
           app-name: 'sidecar-code-test-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B0D844F773FA41EEA538084C070D8C93 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0D2117D47D1643AD903A2539D00FF144 }}
